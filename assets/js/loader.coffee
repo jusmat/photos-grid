@@ -23,10 +23,9 @@ class window.Loader
       @doRequest() if @pageHeight() <= @scrollOffset()
 
   bindFavoriteAction: ->
-    that = this
-    document.addEventListener 'click', (event) ->
-      that.favorites_manager.toggleFavorite(event.target.id)
-      that.favorites_manager.updateButton(event.target)
+    document.addEventListener 'click', (event) =>
+      @favorites_manager.toggleFavorite(event.target.id)
+      @favorites_manager.updateButton(event.target)
 
   doRequest: ->
     @request_maker.load_data()
